@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  
+  <meta charset="UTF-8">
+  <title>Echero's Games</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'><link rel="stylesheet" href="./style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/6b4946b9e2.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+  
+
+  <header class = 'siteTitle'>ECHERO'S GAMEBOY</header>
+  <div class = 'wrapper'>
+    <a href = 'https://github.com/CodyGant' target="_blank"><i class="fa-brands fa-github"></i></a>
+    <a href = 'https://www.linkedin.com/in/cody-gant-ba86881aa/' target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+</div>
+
+  
+
+  
+  
+ 
+  
+<!-- partial:index.partial.html -->
+<div class="gb_body">
+  <div class = 'gb-bodySb'></div>
+  <div class = 'topLine'></div>
+  
+  <div class="screen">
+    <p class = 'matrixLines'><span class = 'matrixText'>DOT MATRIX WITH STEREO SOUND</span></p>
+    <div class="power">
+      <p>BATTERY</p>
+    </div>
+    <div class = "screen_main" >
+      <h1 class = 'mainMenu-animation'>Echero's Game&reg;</h1>
+      <h1 class = 'deathText'>You died.</h1>
+      <h1 class = 'playAgain'>Press start to play again</h1>
+      <h1 id = 'displayGame' class = "displayGame">Snake</h1>
+      <h2 class = 'pressStart'>Press start...</h2>
+      <h2 id="score"> wtf!!!0</h2>
+      <h2 class = 'highScore'>0</h2>
+      <img class = 'snaketest' src = 'snakeidle.gif' alt = "snake">
+      <ol class = "selectMenu">
+        <li><button class = 'active' id = 'highScore'><i class="fa-solid fa-caret-right" ><span>HIGH SCORE</span></i></button></li>
+        <li><button id = "snakeMenu"><i class="fa-solid fa-caret-right" ><span>MAIN MENU</span></i></button></li>
+        <li><button id = 'resumeGame'><i class="fa-solid fa-caret-right"><span>RESUME GAME</span></i></button></li>
+      </ol>
+
+      <ol class = "echeroMenu">
+        <li><button id = 'games'><i class="fa-solid fa-caret-right" ><span>Games</span></i></button></li>
+        <li><button id = "menuHighScores"><i class="fa-solid fa-caret-right"><span>HighScores</span></i></button></li>
+        <li><button id = 'credits'><i class="fa-solid fa-caret-right"><span>Credits</span></i></button></li>
+      </ol>
+
+      <div class = 'grid'></div>
+    </div>
+
+  </div>
+  <div class="btm">
+    <div class="text">Eche'ros <span>GAME BOY&trade;</span></div>
+    <div class="middle"></div>
+    <div class="btns">
+      <div class="button_dpad">
+        <div class = 'DbtnCircle'></div>
+        <div class="inner">
+          <div class="up_down">
+            <div class="u">
+              <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="d">
+              <i class="fa-solid fa-bars"></i>
+            </div>
+          </div>
+          <div class="left_right">
+            <div class="r">
+              <i class="fa-solid fa-bars"></i>              
+            </div>
+            <div class="left">
+              <i class="fa-solid fa-bars"></i>
+            </div>
+          </div>
+        </div>
+  </div>    
+  <div class = 'btnDent'></div>
+      <div class="btns_circle">
+        
+        <div class="btns_circle_left">
+          <h1>B</h1>
+        </div>
+        <div class="btns_circle_right">
+          <h1>A</h1>
+        </div>
+      </div>
+      
+      <div class="btns_btm">
+        <div class = 'buttonDent1'></div>
+        <button class="btns_left" id="select"></button>
+        <p class = 'selecttext'>SELECT</p>
+      
+      <div class = 'buttonDent2'></div>
+      <button class="btns_right"  id="start"></button>
+      <p class = 'starttext'>START</p>
+    
+      </div>
+    </div>
+    </div>
+    <div class="speaker">
+      <div class = 'speakerLine'></div>
+      <div class = 'speakerLine'></div>
+      <div class = 'speakerLine'></div>
+      <div class = 'speakerLine'></div>
+      <div class = 'speakerLine'></div>
+      <div class = 'speakerLine'></div>
+    </div>
+  </div>
+</div>
+
+<script src="index.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,747 @@
+* {
+  box-sizing: border-box;
+ 
+}
+
+
+
+
+
+.grid {
+  background-repeat: no-repeat;
+  display: flex;
+  flex-wrap: wrap;
+  width: 18.4em;
+  height: 18.4em;
+  background:white;
+  background-image:radial-gradient(rgb(204, 215, 216), rgb(255, 255, 255));
+  box-shadow:0 0 5vmin 1vmin rgb(167, 162, 162) inset;
+}
+
+
+.score{
+ 
+ 
+  margin-left:-10px;
+}
+#score, .score{
+  position: absolute;
+  font-family: 'Press Start 2P',cursive;
+  font-size: 10px;
+  color:#615F60;
+  position:absolute;
+  z-index: 9999;
+  top:90%;
+ left:25%;
+
+}
+
+.highScore, .highScoreText{
+  display:none;
+  top:24%;
+  left:15%;
+  font-family: 'Press Start 2P',cursive;
+  font-size: 9px;
+  color:#615F60;
+  position:absolute;
+  z-index: 9999;
+ font-weight: bold;
+  
+}
+.highScore{
+  margin-left:1px;
+}
+
+
+.square {
+  border:none;
+  opacity: .9;
+  width: 16.55px;
+  height: 16.55px;
+}
+
+.snake {
+  box-sizing: content-box;
+  background-color: #3A3839;
+}
+.snakeHead{
+  background:#615F60;
+}
+.death{
+  background:#CECECE;
+  
+  
+  
+}
+
+.apple{
+  border-radius: 50%;
+  box-sizing: content-box;
+  background-color:#20201d;
+}
+
+#select{
+  border-radius: 90px;
+  width:40px;
+  height:11px;
+  top:-15px;
+  position: absolute;
+ font-family: inherit;
+ background: -webkit-linear-gradient(left, rgba(207, 207, 207, 0.637) 0%,rgba(114, 111, 111, 0.178) 100%);
+background-color:#888888;
+ font-weight: 900;
+ font-size: 18px;
+ border:none;
+ border-radius: 90px;
+ box-shadow: 0.1em 0.1em #333333;
+  
+
+}
+#select:hover{
+  cursor:pointer;
+}
+
+#start{
+  font-family: inherit;
+  border-radius: 90px;
+  width:40px;
+  height:11px;
+  left:40px;
+  top:10px;
+  position: absolute;
+  font-weight: 900;
+  font-size: 18px;
+  border:none;
+  border-radius: 90px;
+  box-shadow: 0.1em 0.1em #333333;
+  background: -webkit-linear-gradient(left, rgba(207, 207, 207, 0.637) 0%,rgba(114, 111, 111, 0.178) 100%);
+  background-color:#888888;
+  
+ 
+  
+}
+#start:hover{
+  cursor:pointer;
+}
+
+.echeroMenu{
+  display:none;
+  font-family: 'Press Start 2P',cursive;
+  font-size: 10px;
+  background:none;
+  position:absolute;
+  z-index: 9999;
+  padding:10px 5px;
+  margin-top:50px;
+  margin-left:15px;
+  border:1px solid #615F60;
+  opacity: 0;
+  animation: fadeIn 4s forwards;
+  animation-delay: 2.5s;
+}
+.echeroMenu button{
+  padding:2.5px 5px;
+  color:#615F60;
+  font-size: 10px;
+  margin-bottom:8px;
+  border:none;
+  font-family: 'Press Start 2P',cursive;
+  background:none;
+}
+
+.selectMenu{
+  display:none;
+  font-family: 'Press Start 2P',cursive;
+  font-size: 10px;
+  
+  position:absolute;
+  z-index: 9999;
+  padding:10px 5px;
+  margin-top:50px;
+ margin-left:10px;
+  border:1px solid #615F60;
+  background:none;
+
+}
+button i {
+  visibility: hidden;
+}
+button i span{
+  visibility: visible;
+}
+button i:hover{
+  cursor:pointer;
+  visibility: visible;
+}
+.active i{
+  visibility: visible;
+}
+
+ i span{
+  white-space: nowrap;
+  padding:2.5px 5px;
+  color:#615F60;
+  margin-bottom:8px;
+  border:none;
+  font-family: 'Press Start 2P',cursive;
+  background:none;
+}
+
+.selectMenu button{
+  padding:2.5px 5px;
+  color:#615F60;
+  font-size: 10px;
+  margin-bottom:8px;
+  border:none;
+  font-family: 'Press Start 2P',cursive;
+  background:none;
+  
+  
+}
+
+.displayGameStart{
+  margin-top:15px;
+  margin-left:33px;
+  color:#615F60;
+  font-weight: bold;
+  position:absolute;
+  z-index: 9999;
+  font-family: 'Press Start 2P',cursive;
+  font-size: 20px;
+  opacity: 0;
+  animation:
+    fadeInDown 2.5s forwards;
+   
+}
+
+.displayGame{
+ 
+  margin-top:15px;
+  margin-left:33px;
+  color:#615F60;
+  font-weight: bold;
+  position:absolute;
+  z-index: 9999;
+  font-family: 'Press Start 2P',cursive;
+  font-size: 20px;
+  opacity: 0;
+  animation:
+    fadeInDown 2.5s forwards;
+    animation-delay: 2.5s;
+  
+
+}
+.pressStart{
+  
+  overflow: hidden;
+  white-space: nowrap;
+  margin-top:125px;
+  margin-left:15px;
+  color:#615F60;
+  font-weight: bold;
+  position:absolute;
+  z-index: 9999;
+  font-family: 'Press Start 2P',cursive;
+  font-size: 10px;
+  opacity: 0;
+  animation: 
+  snakeStart 2.5s forwards,
+  blink 3s infinite;
+  
+ animation-delay: 2.5s;
+ 
+}
+
+.snaketest{
+ width:25.4em;
+ height:25.4em;
+ margin-top:-45px;
+ margin-left:-30px;
+ position: absolute;
+ opacity: 0;
+ animation: snakeStart 2.5s forwards;
+ animation-delay: 2.5s;
+ 
+}
+
+.deathText{
+  display:none;
+  font-family: 'Press Start 2P',cursive;
+  font-size: 10px;
+  border-right: .20em solid #615F60;
+  color:#615F60;
+  position:absolute;
+  z-index: 9999;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  margin-top:70px;
+  margin-left:34px;
+  
+  animation: 
+    typing 2.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 60% }
+}
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #615F60; }
+}
+
+
+
+
+
+
+.mainMenu-animation{
+  opacity: 0;
+  overflow: hidden; 
+  white-space: nowrap;
+  margin-top:75px;
+  margin-left:10px;
+  color:#615F60;
+  font-weight: bold;
+  position:absolute;
+  z-index: 9999;
+  font-family: 'Press Start 2P',cursive;
+  font-size: 10px;
+    animation:
+    fadeInDown 2.5s 
+}
+
+@keyframes fadeInDown {
+   0% {
+      opacity: 0;
+      transform: translateY(-20px);
+   }
+   100% {
+      opacity: 1;
+      transform: translateY(0);
+   }
+} 
+@keyframes fadeIn {
+  
+  0% {
+     opacity: 0;
+     transform: translateY(20px);
+  }
+  100% {
+     opacity: 1 ;
+     transform: translateY(-10px);
+  }
+} 
+@keyframes snakeStart {
+  
+  0% {
+     opacity: 0;
+    
+  }
+  100% {
+     opacity: 1 ;
+     
+  }
+} 
+
+
+
+@import url("https://fonts.googleapis.com/css?family=Sarpanch:900");
+
+ 
+.siteTitle{
+  position: absolute;
+  width:100%;
+  font-size: 40px;
+  text-align: center;
+  top:7%;
+  left:0;
+  color: rgb(235, 235, 235);
+  font-family: 'Press Start 2P',cursive;
+  text-shadow: 
+    0 1px 0 #ccc, 
+    0 2px 0 #c9c9c9, 
+    0 3px 0 #bbb, 
+    0 4px 0 #b9b9b9, 
+    0 5px 0 #aaa, 
+    0 6px 1px rgba(0,0,0,.1), 
+    0 0 5px rgba(0,0,0,.1), 
+    0 1px 3px rgba(0,0,0,.3), 
+    0 3px 5px rgba(0,0,0,.2), 
+    0 5px 10px rgba(0,0,0,.25), 
+    0 10px 10px rgba(0,0,0,.2), 
+    0 20px 20px rgba(0,0,0,.15);
+}
+
+
+
+.fa-github{
+ color:rgb(60,60,58);
+ font-size: 40px;
+ margin:10px;
+}
+.fa-linkedin{
+ font-size: 40px;
+ color:rgb(60,60,58);
+}
+
+.wrapper{
+  top:90%;
+  margin:auto 0;
+  position: absolute;
+  min-width:100px;
+  
+}
+
+
+body {
+  font-size: 9px;
+  background: #fabdfcb6;
+  background-size: 320px;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+.selecttext{
+  margin-left:5px;
+  margin-top:2px;
+  font-size: 10px;
+  color:#6495ed;
+}
+.starttext{
+  margin-top:27px;
+  margin-left:8px;
+  font-size: 10px;
+  color:#6495ed;
+}
+body .btns_top {
+  z-index: 5;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+}
+
+.gb_body {
+  box-shadow: inset 0px 0px 22px 7px rgba(0,0,0,0.2),21px 16px 20px -3px rgba(0,0,0,0.2);
+  z-index: 9999;
+  width: 35em;
+  height: 55.1em;
+  border-radius: 15px;
+  border-bottom-right-radius: 55px;
+  position: relative;
+  background: rgb(235, 235, 235);
+  
+  
+  
+  
+}
+.screen {
+  box-shadow: inset 0px 0px 20px -5px rgba(0,0,0,5);
+  border:2px solid rgba(31, 30, 30, 0.808);
+  border-radius: 8px;
+  border-bottom-right-radius: 50px;
+  z-index: 3;
+  width: 28.5em;
+  height: 25.6em;
+  position: absolute;
+  top: 2em;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background:rgb(60,60,58);
+ 
+  
+  background-repeat: no-repeat;
+}
+.power {
+  
+  width: 5em;
+  height: 3em;
+  position: absolute;
+  left: 0%;
+  top: 7.5em;
+  font-family: verdana;
+  color: #fff;
+  background: radial-gradient(100% 100% at 50% 50%, #ff0d33 47%, rgba(0, 0, 0, 0) 50%) 1.5em 0.1em/0.8em 0.8em;
+  background-repeat: no-repeat;
+}
+.gb_body .power p {
+  font-size: 0.8em;
+  position: absolute;
+  top: 2em;
+  left: 50%;
+  transform: translate(-50%, 0);
+  
+  
+}
+.screen_main  {
+ 
+  width: 18.4em;
+  height: 18.4em;
+  position: absolute;
+  box-shadow: inset 2px 5px 5px 3px #000;
+  left: 50%;
+  top: 2.7em;
+  transform: translate(-50%, 0%);
+  background: linear-gradient(#272727, #141414) 10% 10%/10%;
+  background:#3A3839;
+  background-repeat: no-repeat;
+  
+}
+.text {
+  z-index: 6;
+  text-shadow: 1px 1px rgba(185, 185, 184, 0.7);
+  font-weight: bold;
+  font-family: verdana;
+  color: #6495ed;
+  position: absolute;
+  font-size: 1.4em;
+  top: 52%;
+  left: 37%;
+  transform: translate(-50%, 0);
+  position: absolute;
+  text-align: center;
+  padding: 3px;
+  border-radius: 35%;
+}
+.text span{
+  font-size:1.5em;
+  font-weight: 100;
+}
+
+.matrixText{
+  word-spacing: 1px;
+  padding:0 7px;
+  background:rgb(60, 60, 58);
+  
+  color:white;
+  font-size:.9em;
+  top:4.4%;
+  left:7%;
+  position: relative;
+  z-index: 9999;
+  
+}
+
+.matrixLines{
+  width: 94%; 
+  text-align: center; 
+  border-top: 2px solid rgb(97, 9, 37);
+  border-bottom: 2px solid #000; 
+  line-height: 0.3em;
+  margin: 10px 0 20px;
+  margin-left:9px;
+}
+
+
+.btns_circle div {
+  
+  border:2px solid rgba(145, 145, 145, 0.479);
+  width: 4.3em;
+  height: 4.3em;
+  position: absolute;
+  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.637) 0%,rgba(240, 222, 222, 0) 100%);
+  background-color:#f40d30;
+      box-shadow: inset 2px 1.5px 0 rgba(248, 234, 234, 0.267);
+      border-radius: 50%;
+      
+}
+.btnDent{
+  box-shadow: inset 0px 0px 25px -5px rgba(0,0,0,0.1);
+  position: absolute;
+  top: 61%;
+  left: 59%;
+  width:110px;
+  height:50px;
+  border-radius: 50px;
+  
+  transform: rotate(-18deg);
+
+}
+ .btns_circle div h1 {
+  position: absolute;
+  color:#6495ed;
+  font-weight: bold;
+  top: 120%;
+  left: 60%;
+  transform: rotate(-15deg);
+  font-size: 1.5em;
+  font-family: arial;
+}
+ .btns_circle_left {
+  left: 61%;
+  top: 64%;
+}
+ .btns_circle_right {
+  left: 79%;
+  top: 60.5%;
+}
+.btns_btm {
+  width: 9em;
+  height: 1.6em;
+  top: 45.5em;
+  left: 35%;
+  transform: rotate(-25deg);
+  position: absolute;
+  display: flex;
+  
+  
+}
+
+
+
+ .speaker {
+   z-index:9999;
+   height:70px;
+   border-radius: 10px;
+  position: absolute;
+  top:85%;
+  left:71%;
+  transform: rotate(-28deg);
+  display:flex;
+
+}
+.speakerLine{
+  
+ opacity:.7 ;
+  background: -webkit-linear-gradient(left, #fff 0%,#888888a2 100%);
+  border:none;
+  box-shadow: inset -37px 9px 0px -4px rgba(0,0,0,0.2);
+  border-radius: 25px;
+  margin:3px;
+  width:7.5px;
+  height:50px;
+  left:3px;
+  
+}
+
+.button_dpad {
+  
+  z-index: 5;
+  width: 12em;
+  height: 12em;
+  position: absolute;
+  top: 70%;
+  left: 25.5%;
+  transform: translate(-50%, -50%);
+  justify-content: center;
+  align-items: center;
+}
+.button_dpad .inner {
+  box-shadow: inset -21px 3px 51px -24px #fff;
+  position: relative;
+  width: 8.6em;
+  height: 8.6em;
+  border-radius: 50%;
+}
+.button_dpad .inner i {
+
+  font-size: 1.7em;
+  color: #303030;
+ 
+  position: absolute;
+}
+.left_right {
+  border:2px solid black;
+  background-color:#201e1e;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 2.9em;
+  border-radius: 8px;
+  border:none;
+  
+}
+.left i{
+  top:.4em;
+  left:.4em;
+}
+ .r i {
+  color: #fff;
+  left: 3.9em;
+  top:.4em
+}
+
+ .up_down {
+  z-index: 5;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 2.9em;
+  height: 100%;
+ 
+  background-color:#201e1e;
+  border-radius: 8px;
+  border:none;
+  
+}
+
+.DbtnCircle{
+  background:rgba(41, 41, 41, 0.733);
+  width:20px;
+  height:20px;
+  border-radius: 50%;
+  z-index: 999;
+  left:27%;
+  top:27%;
+  position: absolute;
+}
+ 
+ 
+.d {
+  z-index: 6;
+  width: 100%;
+  height: 100%;
+ 
+  
+}
+.d i {
+  font-size: 2px;
+  top: 3.8em;
+  left:.37em
+}
+
+.u i{
+  left:.4em;
+  top:.2em
+}
+
+
+.text{
+  border:none;
+}
+
+.buttonDent1{
+ 
+  height:18px;
+  border-radius: 50px;
+  width:47px;
+  position: absolute;
+  top:-17.5px;
+  left:-2px;
+  box-shadow: inset 0px 0px 25px -5px rgba(0,0,0,0.2);
+}
+.buttonDent2{
+  
+  height:18px;
+  border-radius: 50px;
+  width:47px;
+  position: absolute;
+  left:38px;
+  top:7.8px;
+  box-shadow: inset 0px 0px 25px -5px rgba(0,0,0,0.2);
+}
+
