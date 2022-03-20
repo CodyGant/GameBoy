@@ -1,7 +1,8 @@
 # Echeros GameBoy
 Basic snake game inside of a gameboy!
 Build with basic javascript and lots of css
-
+uses local storage to save heighest score, can pause resume, restart game.
+the more apples you eat the faster you get.
 
 Deployed on vercel
 
